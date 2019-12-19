@@ -9,7 +9,7 @@ import { writeOnVisible, WriteSequence } from "./write.js"
 
 /*********************
  *  writeOnVisible
- */
+ ********************/
 
 const elem = document.querySelector( ".elem" )
 
@@ -23,7 +23,7 @@ writeOnVisible( elem, options1 )
 
 /*********************
  *  WriteSequence
- */
+ ********************/
 
 const nodeList = document.querySelectorAll( "section" );
 
@@ -38,7 +38,7 @@ const sequence = new WriteSequence( nodeList, options2 )
 
 /*********************
  *  Combine both
- */
+ ********************/
 
 const elem = document.querySelector( ".elem" )
 const nodeList = document.querySelectorAll( "section" );
