@@ -12,7 +12,7 @@ Based on `requestAnimationFrame`
 
 ### **writeOnVisible** 
 ```
-import { writeOnVisible } from "./write.js"
+import { writeOnVisible } from "lb-write"
 
 ...
 
@@ -29,7 +29,7 @@ writeOnVisible( ".elem", options )
 ### **WriteSequence** 
 
 ```
-import { WriteSequence } from "./write.js"
+import { WriteSequence } from "lb-write"
 
 ...
 
