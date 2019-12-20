@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel _index.html",
     "build": "rm -rf dist && npx babel src/write.js --out-file dist/bundle.js --source-maps && uglifyjs dist/bundle.js -o dist/bundle.js -c -m",
     "deploy": "npm run build && npm publish"
   },
@@ -15,5 +15,6 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "uglifyjs": "^2.4.11"
-  }
+  },
+  "dependencies": {}
 }
