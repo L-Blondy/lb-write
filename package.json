@@ -1,8 +1,8 @@
 {
   "name": "lb-write",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "start": "parcel _index.html",
     "build": "rm -rf dist && npx babel src/write.js --out-file dist/bundle.js --source-maps && uglifyjs dist/bundle.js -o dist/bundle.js -c -m",
@@ -16,5 +16,8 @@
     "@babel/preset-env": "^7.7.7",
     "uglifyjs": "^2.4.11"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "dist/*"
+  ]
 }

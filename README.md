@@ -1,6 +1,7 @@
 # lb-write
 
-Will take the text content and write it when needed
+Will take the text content and rewrite it letter by letter when needed.
+Based on `requestAnimationFrame`
 
 ## Usage
 
@@ -9,7 +10,7 @@ Will take the text content and write it when needed
 - single node,
 - string ( querySelector style )
 
-1. **writeOnVisible** 
+### **writeOnVisible** 
 ```
 import { writeOnVisible } from "./write.js"
 
@@ -25,7 +26,7 @@ writeOnVisible( ".elem", options )
 	.then( node => console.log( node ) )
 ```
 
-2. **WriteSequence** 
+### **WriteSequence** 
 
 ```
 import { WriteSequence } from "./write.js"
@@ -37,12 +38,13 @@ const options = {
 	letters: 1,
 	speed: 1,
 }
-const sequence = new WriteSequence( ".elems", options ) //initialization automatically cleans the nodes
+//initialization automatically cleans the nodes
+const sequence = new WriteSequence( ".elems", options ) 
 	.write()
 	.then( nodeList => console.log( nodeList ) )
 ```
 
-3.  **Combine both**
+###  **Combine both**
 
 ```
 
