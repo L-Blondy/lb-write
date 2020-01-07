@@ -14,6 +14,7 @@
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
+    "parcel-bundler": "^1.12.4",
     "uglifyjs": "^2.4.11"
   },
   "dependencies": {},
