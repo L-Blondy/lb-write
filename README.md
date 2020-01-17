@@ -1,16 +1,15 @@
 # lb-write
 
-Will take the text content and rewrite it letter by letter when needed.
+Will take the text content and rewrite it letter by letter when needed.<br/>
 Based on `requestAnimationFrame`
 
-## Usage
+### **writeOnVisible** 
 
-`writeOnVisible` && `WriteSequence` can both take the following as first argument :
-- nodeList / array of nodes,
+Will rewrite the element content when the element(s) is/are on screen <br/>
+If you want a custom threshold on `writeOnVisible` use `WriteSequence` instead<br/>
+Works with :
 - single node,
 - string ( querySelector style )
-
-### **writeOnVisible** 
 ```
 import { writeOnVisible } from "lb-write"
 
@@ -27,6 +26,12 @@ writeOnVisible( ".elem", options )
 ```
 
 ### **WriteSequence** 
+
+Rewrite the elements one after another<br/>
+Works with :
+- nodeList / array of nodes,
+- single node,
+- string ( querySelector style )
 
 ```
 import { WriteSequence } from "lb-write"
@@ -51,7 +56,7 @@ const sequence = new WriteSequence( ".elems", options )
 const sequence = new WriteSequence( ".nodes" )
 
 writeOnVisible( ".node" )
-	.then( () => sequence.start() )
+	.then( () => sequence.write() )
 	.then( () => console.log( "sequence finished" ) )
 ```
 
