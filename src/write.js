@@ -49,7 +49,8 @@ export function writeOnVisible ( node, options = {} ) {
 		let promise = new Promise( function ( resolve ) {
 			const effect = new Rewrite( node ).clear();
 			const opts = {
-				root: options.root
+				root: options.root,
+				threshold: 0.001
 			};
 			const cb = entries => {
 				entries.forEach( e => {
@@ -68,7 +69,8 @@ export function writeOnVisible ( node, options = {} ) {
 	} else {
 		const effect = new Rewrite( node ).clear();
 		const opts = {
-			root: options.root
+			root: options.root,
+			threshold: 0.001
 		};
 		const cb = entries => {
 			entries.forEach( e => {
