@@ -20,7 +20,7 @@ import { writeOnVisible } from "lb-write"
 const options = {
 	letters: 1,
 	speed: 1,
-	root: null //body
+	root: null //viewport
 }
 writeOnVisible( ".elem", options )
 	.then( node => console.log( node ) )
