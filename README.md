@@ -1,12 +1,13 @@
 # lb-write
 
-Will take the text content and rewrite it letter by letter when needed.<br/>
-Based on `requestAnimationFrame`
+Exposes two functions that will clear the text content of any element and rewrite it letter by letter when specified.  
+- `writeOnVisible` will trigger the effect when the element is visible. Will not do anything if browser has no `IntersectionObserver` support.
+- `writeSequence` is manually triggerred and will write all of its targets in a sequence. Will work only on the first node if `Promises` are not supported
+They both return a promise resolving with the target node / array of nodes once the effect is over.  
 
 ### **writeOnVisible** 
 
-Will rewrite the element content when the element(s) is/are on screen <br/>
-If you want a custom threshold on `writeOnVisible` use `WriteSequence` instead<br/>
+Rewrites the content when the element intersects with the root.  
 Works with :
 - single node,
 - string ( querySelector style )
@@ -19,7 +20,7 @@ import { writeOnVisible } from "lb-write"
 const options = {
 	letters: 1,
 	speed: 1,
-	root: null //viewport
+	root: null //body
 }
 writeOnVisible( ".elem", options )
 	.then( node => console.log( node ) )
@@ -27,11 +28,11 @@ writeOnVisible( ".elem", options )
 
 ### **WriteSequence** 
 
-Rewrite the elements one after another<br/>
+Rewrites the content of the elements in a sequence.  
 Works with :
 - nodeList / array of nodes,
 - single node,
-- string ( querySelector style )
+- string ( querySelectorAll style )
 
 ```
 import { WriteSequence } from "lb-write"
@@ -59,11 +60,3 @@ writeOnVisible( ".node" )
 	.then( () => sequence.write() )
 	.then( () => console.log( "sequence finished" ) )
 ```
-
-## Notes
-
-- `writeOnVisible` : Will not do anything if browser has no `IntersectionObserver` support.
-- `WriteSequence` : Clears all fields on instanciation. Will work on first node only if Promises are not supported
-<br/>
-Both return a promise containing the node / array of nodes
-Both will still work on single nodes if Promises are no supported
